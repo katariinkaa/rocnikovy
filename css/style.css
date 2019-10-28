@@ -1,0 +1,195 @@
+.font {
+	font-family: 'Major Mono Display', monospace;
+}
+
+/* 
+ * HEADER
+ */
+header {
+    height: 150vh;
+}
+header i {
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    font-size: 200%;
+    z-index: 1;
+    cursor: pointer;
+}
+.login {
+    font-size: 100%;
+    top: 3.5%;
+    left: 4.5%;
+}
+
+/* Nastavenia pre kocky */
+.kocky {
+    width: 30vw;
+    height: 70vh;
+    float: left;
+    border-radius: 3px;
+    margin: 1% 0 1% 2.5vw;
+    box-shadow: 0 10px 10px 0 #595959;
+    transition: .5s;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+}
+/* tma na kockach */
+.black {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+    border-radius: 3px;
+    position: absolute;
+    transition: .5s;
+}
+.down {
+    top: 100%;
+}
+.up {
+    top: -100%;
+}
+.left {
+    left: -100%;
+}
+.right {
+    left: 100%;
+}
+/* Text na tme kociek */
+.text {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    position: absolute;
+    transition: .5s;
+    color: white;
+    text-align: center;
+}
+.text h1 {
+    font-size: 250%;
+    margin: 15% 0 25% 0;
+}
+.text p {
+    font-size: 120%;
+    margin: 0 0 20% 0;
+}
+.text a {
+    font-size: 120%;
+    text-decoration: none;
+    color: #ffcc00;
+}
+.text a:hover {
+    padding-bottom: 1%;
+    border-bottom: 1px solid #ffcc00;
+}
+
+/* Hovre na text kociek */
+.kocky:hover .black {
+    top: 0;
+    left: 0;
+}
+.kocky:hover .text {
+    top: 0%;
+    left: 0;
+}
+
+/* * KOCKY * */
+.uvod {
+    text-align: center;    
+}
+.uvod h1 {
+    font-size: 250%;
+    margin: 30% 0 10% 0;
+}
+.uvod p {
+    margin-bottom: 5%;
+    line-height: 250%;
+}
+
+
+/*  Otacanie Loginu  */
+.flip-card {
+    perspective: 1000px;
+    box-shadow: none;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: .5s;
+    transform-style: preserve-3d;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+}
+h1 i {
+    color: #ffcc00;
+    position: static;
+    font-size: 100%;
+    z-index: 0;
+    cursor: default;
+}
+
+/* CSS pre Login */
+.flip-card-back h1 {
+    font-size: 200%;
+    margin: 15% 0 10% 0;
+}
+.flip-card-back p {
+    margin-bottom: 10%;
+}
+.flip-card-back form {
+    text-align: center;
+}
+.flip-card-back input {
+    width: 60%;
+    padding: 4%;
+    margin: 0% 0 5% 0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.flip-card-back button {
+    width: 70%;
+    padding: 4%;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    color: black;
+    margin-bottom: 5%;
+    cursor: pointer;
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,.15);
+}
+.flip-card-back a {
+    text-decoration: none;
+    color: black;
+}
+.flip-card-back a:hover {
+    border-bottom: 1px solid black;
+    padding-bottom: 1%;
+}
+
+
+
+.oblecenie {
+    background-image: url(../img/img_4.jpg);
+}
+.elektronika {
+    background-image: url(../img/img_8.jpg);
+}
+.domacnost {
+    background-image: url(../img/img_6.jpg);
+}
+.novinky {
+    background-image: url(../img/Elektronika.jpg);
+    width: 62.5vw;
+}

@@ -1,0 +1,39 @@
+.font {
+	font-family: 'Major Mono Display', monospace;
+}
+
+
+
+section h1 {
+    color: #ffcc00;
+}
+section p {
+    line-height: 300%;
+    border-bottom: 1px solid #ffcc00;
+}
+form input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
+}
+textarea:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
+}
+form button {
+    background-color: #ffcc00 !important;
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,.15);
+}
+form button:focus {
+    box-shadow: none !important;
+}
+
+img {
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    z-index: -1;
+}
+.gnom {
+    top: 10vh;
+    left: 78vw;
+}

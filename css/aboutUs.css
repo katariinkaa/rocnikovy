@@ -1,0 +1,27 @@
+article i {
+    color: #ffcc00;
+}
+article p {
+    line-height: 300%;
+    padding: 0 5% 0 10%;
+}
+article p:nth-child(n+3) {
+    font-size: 70%;
+    padding-top: 5%;
+}
+article a {
+    color: black;
+    margin-left: 10%;
+}
+article a:hover {
+    color: black;
+}
+.bci {
+    background-image: url(../img//grFalls.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.bcc {
+    background-image: url(../img/res.png);
+    background-size: cover;
+}
