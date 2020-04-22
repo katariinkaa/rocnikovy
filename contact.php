@@ -1,3 +1,54 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    if (empty($_POST['email'])) {
+        $emailError = 'Email is empty';
+    } else {
+        $email = $_POST['email'];
+
+        // validating the email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailError = 'Invalid email';
+        }
+    }
+    if (empty($_POST['message'])) {
+        $messageError = 'Message is empty';
+    } else {
+        $message = $_POST['message'];
+    }
+    if (empty($emailError) && empty($messageError)) {
+        $date = date('j, F Y h:i A');
+
+        $emailBody = "
+			<html>
+			<head>
+				<title>$email is contacting you</title>
+			</head>
+			<body style=\"background-color:#fafafa;\">
+				<div style=\"padding:20px;\">
+					Date: <span style=\"color:#888\">$date</span>
+					<br>
+					Email: <span style=\"color:#888\">$email</span>
+					<br>
+					Message: <div style=\"color:#888\">$message</div>
+				</div>
+			</body>
+			</html>
+		";
+
+        $headers =     'From: Contact Form <katka2803@gmail.com>' . "\r\n" .
+            "Reply-To: $email" . "\r\n" .
+            "MIME-Version: 1.0\r\n" .
+            "Content-Type: text/html; charset=iso-8859-1\r\n";
+
+        $to = 'katka2803@gmail.com';
+        $subject = 'Contacting you';
+
+        if (mail($to, $subject, $emailBody, $headers)) {
+            $sent = true;
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,38 +96,53 @@
             </div>
         </div>
 
-            <!-- Form -->
+        <!-- Form -->
 
         <div class="container col-md-7">
-            <form>
+            <form action="contact.php" method="POST" enctype="multipart/form-data" name="contact_form">
+                <input type="hidden" name="action" value="submit">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="">fiRst nAMe</label>
-                        <input type="text" class="form-control">
+                        <label for="">name</label>
+                        <input class="form-control" name="name" type="text" value="" size="30" />
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="">second nAMe</label>
-                        <input type="text" class="form-control">
+                        <label for="">email</label>
+                        <input class="form-control" name="email" type="text" id="email" value="" size="30" />
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="">eMAil</label>
-                    <input type="text" class="form-control">
-                </div>
-                
+
+
                 <div class="form-group">
                     <label for="">teXt :</label>
-                    <textarea name="" class="form-control" rows="5"></textarea>
+                    <textarea class="form-control" name="message" class="form-control" rows="7" cols="30"></textarea>
                 </div>
 
-                <button type="" class="btn col-md-3 py-3 my-3">siGn in</button>
+                <button type="submit" value="Send email" name="send_email" class="btn py-3 mb-3 col-md-2">send</button>
             </form>
+
+            <?php if (isset($emailError) || isset($messageError)) : ?>
+                <div id="error-message">
+                    <?php
+                    echo isset($emailError) ? $emailError . '<br>' : '';
+                    echo isset($messageError) ? $messageError . '<br>' : '';
+                    ?>
+                </div>
+            <?php endif; ?>
+
+
+            <?php if (isset($sent) && $sent === true) : ?>
+                <div id="done-message">
+                    Your data was succesfully submitted
+                </div>
+            <?php endif; ?>
+
         </div>
 
-        <!-- <img src="../img/st.png" alt="Star" width="500"> -->
-        <!-- <img src="../img/g.png" alt="Gnom" width="300" class="gnom"> -->
+
+
+        <img src="../img/st.png" alt="Star" width="500">
     </section>
 
     <!-- Footer -->

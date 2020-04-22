@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +48,8 @@
         <!-- Form -->
 
         <div class="container col-md-7">
-            <form>
+            <form action="register.php" method="post">
+                <?php include('errors.php'); ?>
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="">fiRst nAMe</label>
@@ -63,7 +65,7 @@
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="">pppPseudoniM</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="user_name" value="<?php echo $username; ?>">
                     </div>
 
                     <div class="form-group col-md">
@@ -74,17 +76,17 @@
 
                 <div class="form-group">
                     <label for="">eMAil</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="user_email" value="<?php echo $email; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="">pAssWoRdc :-(</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="user_pass_1">
                 </div>
 
                 <div class="form-group">
                     <label for="">pAssWoRd AGAin :-)</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="user_pass_2">
                 </div>
 
                 <div class="form-group form-check my-5">
@@ -92,10 +94,10 @@
                     <label class="form-check-label" for="">i Acept</label>
                 </div>
 
-                <button type="" class="btn col-md-3 py-3 my-3">ReGisteR Me</button>
+                <button type="submit" class="btn col-md-3 py-3 my-3" name="reg_user">ReGisteR Me</button>
             </form>
         </div>
-        <img src="../img/at.png" alt="Adventure time">
+        <!-- <img src="../img/at.png" alt="Adventure time"> -->
     </aside>
 
     <!-- Footer -->

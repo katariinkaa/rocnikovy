@@ -1,6 +1,11 @@
 .font {
 	font-family: 'Major Mono Display', monospace;
 }
+a {
+    text-decoration: none !important;
+}
+
+
 
 /* 
  * HEADER
@@ -11,7 +16,7 @@ header {
 header i {
     position: absolute;
     top: 2%;
-    left: 1%;
+    right: 1%;
     font-size: 200%;
     z-index: 1;
     cursor: pointer;
@@ -19,7 +24,7 @@ header i {
 .login {
     font-size: 100%;
     top: 3.5%;
-    left: 4.5%;
+    right: 4.5%;
 }
 
 /* Nastavenia pre kocky */
@@ -28,7 +33,7 @@ header i {
     height: 70vh;
     float: left;
     border-radius: 3px;
-    margin: 1% 0 1% 2.5vw;
+    margin: 2% 0 2% 0vw;
     box-shadow: 0 10px 10px 0 #595959;
     transition: .5s;
     overflow: hidden;
@@ -69,20 +74,24 @@ header i {
 }
 .text h1 {
     font-size: 250%;
-    margin: 15% 0 25% 0;
+    padding-bottom: 5%;
+    margin: 30% 5% 20% 5%;
+    border-bottom: 1px solid #ffcc00;
 }
-.text p {
-    font-size: 120%;
-    margin: 0 0 20% 0;
+.novinky h1 {
+    margin: 10% 5% 15% 5%;
 }
 .text a {
     font-size: 120%;
-    text-decoration: none;
     color: #ffcc00;
+    border: 1px solid #ffcc00;
+    padding: 3%;
+    transition: .3s;
+    border-radius: 4px;
 }
 .text a:hover {
-    padding-bottom: 1%;
-    border-bottom: 1px solid #ffcc00;
+    background-color: #ffcc00;
+    color: black;
 }
 
 /* Hovre na text kociek */
@@ -118,7 +127,7 @@ header i {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
     transition: .5s;
     transform-style: preserve-3d;
 }
@@ -143,35 +152,28 @@ h1 i {
 /* CSS pre Login */
 .flip-card-back h1 {
     font-size: 200%;
-    margin: 15% 0 10% 0;
+    margin: 15% 0 5% 0;
+    text-align: center;
 }
 .flip-card-back p {
     margin-bottom: 10%;
-}
-.flip-card-back form {
     text-align: center;
 }
-.flip-card-back input {
-    width: 60%;
-    padding: 4%;
-    margin: 0% 0 5% 0;
-    border: 1px solid black;
-    border-radius: 5px;
+form input:focus {
+    border-color: #ffcc00 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
 }
-.flip-card-back button {
-    width: 70%;
-    padding: 4%;
-    border: none;
-    border-radius: 5px;
+.log {
     background-color: #ffcc00;
-    color: black;
-    margin-bottom: 5%;
-    cursor: pointer;
+    padding: 3% 0% 3% 0%;
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+    margin-bottom: 10%;
     box-shadow: 0 6px 6px 0 rgba(0,0,0,.15);
 }
 .flip-card-back a {
-    text-decoration: none;
-    color: black;
+    color: black !important;
 }
 .flip-card-back a:hover {
     border-bottom: 1px solid black;

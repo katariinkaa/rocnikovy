@@ -1,0 +1,47 @@
+.font {
+    font-family: 'Major Mono Display', monospace;
+}
+
+th {
+    font-family: 'Major Mono Display', monospace;
+}
+thead {
+    background-color: #ffcc00;
+}
+.hide {
+    /* background: #ffcc00; */
+    display: none;
+    padding: 5% 5% 0 5%;  
+}
+.btn-primary {
+    background-color: #ffcc00 !important;
+    border: none !important;
+    padding: 1% !important;
+    color: black !important;
+    margin: 5vh 0 5vh 0 !important;
+}
+.btn-primary:hover {
+    cursor: pointer;
+}
+
+label {
+    font-family: 'Major Mono Display', monospace;
+}
+
+form input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
+}
+textarea:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
+}
+form button:focus {
+    box-shadow: none !important;
+}
+
+@media (max-width: 800px) {
+    .btn-primary {
+        padding: 5% !important;
+    }
+}

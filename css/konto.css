@@ -1,26 +1,282 @@
-.font {
-	font-family: 'Major Mono Display', monospace;
+/* .font {
+    font-family: 'Major Mono Display', monospace;
 }
 
 
 body {
     background-color: #ffcc00 !important;
-    padding: 0 5% 0 5%;
+    padding: 10vh 5% 0 5%;
+}
+.odhlasit {
+    position: fixed;
+    background-color: black !important;
+    border: none !important;
+    right: 1vh;
+    top: 1vw;
+} */
+
+/* Alert */
+/* h3 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    padding-top: 45vh;
+    text-align: center;
+    background-color: white;
+    color: #ffcc00;
+    font-size: 500%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.fa-times {
+    font-size: 150%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+.zmenit:hover .fa-edit {
+    transition: .5s;
+    transform: rotate(360deg);
+}
+.custom-file-label::after {
+    background-color: #ffcc00 !important;
+    color: black !important;
+    content: "bRoWse" !important;
+}
+.odhlasit a {
+    color: #ffcc00;
+}
+.odhlasit a:hover {
+    text-decoration: none;
+    color: #ffcc00;
+}
+.zmena {
+    position: fixed !important;
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 2;
+    width: 50%;
+    left: 25%;
+    top: 5%;
+    display: none;
+}
+.zmena h1 {
+    text-align: center;
+}
+form input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
 }
 .container-fluid {
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0 8px 6px -6px black;
-    /* height: auto; */
+    box-shadow: 0 10px 10px 0 #000;
 }
-li a {
-    color: #ffcc00;
+th {
+    font-family: 'Major Mono Display', monospace;
 }
-form button {
+thead {
     background-color: #ffcc00 !important;
-    box-shadow: 0 6px 6px 0 rgba(0,0,0,.15);
 }
-.bci {
-    background-image: url(../img//grFalls.jpg);
-    background-size: cover;
+.zmenit {
+    background-color: #ffcc00 !important;
+    border: none !important;
+}
+.zmenit a {
+    color: black;
+}
+.zmenit a:hover {
+    color: black;
+    text-decoration: none;
+}
+.nav-link {
+    color: #ffcc00 !important;
+}
+.active {
+    color: black !important;
+}
+
+@media (max-width: 750px) {
+    li {
+        background-color: red !important;
+    }
+} */
+
+
+
+.font {
+    font-family: 'Major Mono Display', monospace;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.br {
+    border-radius: 0;
+}
+
+
+/* Alert */
+h3 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    padding-top: 45vh;
+    text-align: center;
+    background-color: white;
+    color: #ffcc00;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.fa-bars {
+    top: 92% !important;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.active {
+    background-color: #ffcc00 !important;
+    color: white !important;
+}
+
+.tab-pane {
+    background-color: white !important;
+    color: black !important;
+}
+
+
+
+th {
+    font-family: 'Major Mono Display', monospace;
+}
+
+thead {
+    background-color: #ffcc00 !important;
+}
+
+
+
+.odhlasit a {
+    color: #ffcc00 !important;
+    background-color: black !important;
+    border-radius: 5px;
+}
+
+
+
+
+
+.zmenit {
+    position: absolute;
+    bottom: 2vh;
+    right: 1vw;
+    background-color: #ffcc00 !important;
+    border: none !important;
+}
+
+.zmenit a {
+    color: black;
+}
+
+.zmenit a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.zmenit:hover .fa-edit {
+    transition: .5s;
+    transform: rotate(360deg);
+}
+
+.pos {
+    bottom: 2vh;
+    left: 3vw;
+}
+
+
+.kredit {
+    position: absolute;
+    top: 3vh;
+    right: 1vw;
+}
+
+
+
+
+.zmena {
+    position: fixed !important;
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 2;
+    width: 50%;
+    left: 25%;
+    top: 5%;
+    display: none;
+}
+
+.zmena h1 {
+    text-align: center;
+}
+
+form input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
+}
+
+
+
+
+
+.fa-times {
+    font-size: 150%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.custom-file-label::after {
+    background-color: #ffcc00 !important;
+    color: black !important;
+    content: "bRoWse" !important;
+}
+.nav_B {
+    display: none !important;
+}
+
+@media (max-width: 800px) {
+    .zmena {
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+    }
+    .nav_A {
+        display: none !important;
+    }
+    .nav_B {
+        display: block !important;
+    }
+    .nav_B_b {
+        display: block !important;
+    }
+    .dropdown .btn {
+        background-color: #ffcc00;
+        border: #ffcc00;
+        color: black;
+    }
+    .dropdown .btn:focus {
+        box-shadow: none !important;
+    }
+    .dropdown .btn:hover {
+        background-color: #ffcc00 !important;
+        color: black !important;
+    }
 }

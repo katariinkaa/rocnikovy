@@ -1,0 +1,22 @@
+.font {
+	font-family: 'Major Mono Display', monospace;
+}
+
+form input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, .7) !important;
+    border-color: #ffcc00 !important;
+}
+
+
+.btn {
+    background-color: #ffcc00 !important;
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,.15);
+}
+.btn:focus {
+    box-shadow: none !important;
+}
+
+/* Skrytý link */
+.d {
+    display: none !important;
+}

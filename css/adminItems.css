@@ -1,0 +1,19 @@
+.font {
+	font-family: 'Major Mono Display', monospace;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+.thead {
+    background-color: #ffcc00;
+    text-align: center;
+}
+a {
+    text-decoration: none !important;
+}
+
+.a {
+    display: none !important;
+}

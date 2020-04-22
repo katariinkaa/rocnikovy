@@ -2,7 +2,9 @@
 	font-family: 'Major Mono Display', monospace;
 }
 
-
+a {
+    text-decoration: none !important;
+}
 
 section h1 {
     color: #ffcc00;
