@@ -2,6 +2,7 @@
 include_once 'config.php';
 include_once 'server.php';
 error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ERROR | E_PARSE);
 $result = mysqli_query($connect, "SELECT * FROM items ");
 
 
@@ -24,9 +25,9 @@ if (isset($_GET['logout'])) {
     <title>Document</title>
 
     <!-- reset -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/ponuka.css">
+    <link rel="stylesheet" type="text/css" href="../css/ponuka.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- písmo -->
@@ -144,7 +145,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck4" name="size[]" value="M">
-                                                    <label class="custom-control-label" for="customCheck4" name="size[]">M</label>
+                                                    <label class="custom-control-label" for="customCheck4">M</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,7 +154,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck5" name="size[]" value="S">
-                                                    <label class="custom-control-label" for="customCheck5" name="size[]">S</label>
+                                                    <label class="custom-control-label" for="customCheck5">S</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +163,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck6" name="size[]" value="XXL">
-                                                    <label class="custom-control-label" for="customCheck6" name="size[]">XXL (Šimon)</label>
+                                                    <label class="custom-control-label" for="customCheck6">XXL (Šimon)</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -188,7 +189,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck7" name="sex[]" value="MUZ">
-                                                    <label class="custom-control-label" for="customCheck7" name="sex[]">Muz</label>
+                                                    <label class="custom-control-label" for="customCheck7">Muz</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,7 +198,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck8" name="sex[]" value="ZENA">
-                                                    <label class="custom-control-label" for="customCheck8" name="sex[]">Zena</label>
+                                                    <label class="custom-control-label" for="customCheck8">Zena</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -220,8 +221,31 @@ if (isset($_GET['logout'])) {
             </form>
 
 
+            <?php
+            //vypis pre filtrovane znacky
+            if (isset($_POST['submit'])) {
+                $brand = implode(",", $_POST['brand']);
+
+                $query = mysqli_query($connect, "SELECT * FROM items WHERE brand = '$brand'");
+                while ($fetch = mysqli_fetch_assoc($query)) {
+                    //fetch a schools data
+
+                }
+
+                //if(!empty($_POST['brand'])) {
+
+                //foreach($_POST['brand'] as $value){
+                //echo $value;
 
 
+                // }
+
+                //}
+
+            }
+            ?>
+
+            <!-- Produkty -->
 
 
             <div class="container-fluid col-md-10">
@@ -233,7 +257,6 @@ if (isset($_GET['logout'])) {
 
                             <div class="row my-5">
                                 <?php
-
                                 //filtre pre ponuku
                                 if (!isset($_POST['submit'])) {
                                     $results = mysqli_query($connect, "SELECT * FROM items WHERE order_status=1");
@@ -248,7 +271,7 @@ if (isset($_GET['logout'])) {
                                     //ak je zadana iba velkost
                                     if(empty($brand)&&empty($sex)&&!empty($size)) {
 
-                                        echo "size vidim";
+                                       // echo "size vidim";
                                         $results = mysqli_query($connect,
                                             "SELECT * FROM items WHERE size = '$size'");
                                     }
@@ -307,9 +330,9 @@ if (isset($_GET['logout'])) {
 
                                         "<div class='txt'>" .
 
-                                        "<h1>pRoduct id " . $row["product_id"] . "</h1>" .
+                                        "<h1>". $row["image_title"] . "</h1>" .
 
-                                        "<i>" . $row["credits"] . "€</i>" .
+                                        "<i>" . $row["credits"] . "kR</i>" .
                                         "<p>" . $row["image_text"] . "</p>" .
 
                                         "</div>" .

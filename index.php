@@ -1,3 +1,12 @@
+<?php
+// upravit linky na admin rozhrani (tie co su modre)
+// v openItem pridat hore kolko kreditov ma user nech ma lepsi prehlad
+// error message v pripade, ze nema dostatok kreditov (echo zakomentovane v open item)
+// take to menu v adminUpload na vyber pohlavia (zena/muz) a na vyber znacky + mozno velkosti
+// ked si otvoris dany produkt tak aby trosku centrovalo obrazok lebo dava ho aspon mne uplne hore
+?>
+
+
 <?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">

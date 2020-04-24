@@ -1,7 +1,7 @@
 <?php
 include_once 'config.php';
 include_once 'server.php';
-echo $_SESSION['user_name'];
+
 
 //inicializácia správ na errory
 $msg = "";
@@ -17,8 +17,9 @@ if (isset($_POST['submit_order'])) {
     // dostaneme text
 
     $user_id = $_SESSION['user_id'];
-    $product_id = $_POST['product_id'];
+    $product_id = $_GET['product_id'];
     $credits = $row['credits'];
+    $user_tokens=$_SESSION['user_tokens'];
 
     $user_email = $_SESSION['user_email'];
     $name = mysqli_real_escape_string($connect, $_POST['name']);
@@ -28,12 +29,31 @@ if (isset($_POST['submit_order'])) {
     $phone_number = mysqli_real_escape_string($connect, $_POST['phone_number']);
 
 
+    $user_credits=($user_tokens)-($credits);
+    if($user_credits>=0) {
 
-    $sql = "INSERT INTO orders (product_id, user_id, name, user_street, user_city, user_zip, user_email, phone_number, credits)
+        $sql = "INSERT INTO orders (product_id, user_id, name, user_street, user_city, user_zip, user_email, phone_number, credits, order_status)
              VALUES ('$product_id', '$user_id', '$name', '$user_street', '$user_city','$user_zip',
-             '$user_email','$phone_number','$credits')";
-    //query
-    mysqli_query($connect, $sql);
+             '$user_email','$phone_number','$credits', 'Spracováva sa')";
+        //query
+        mysqli_query($connect, $sql);
+        $sql1 = "UPDATE items SET order_status = 0 WHERE product_id='$product_id'";
+        //query
+
+        mysqli_query($connect, $sql1);
+
+        echo $user_tokens - $credits;
+        $sql2 = "UPDATE users SET user_tokens = '$user_credits' WHERE user_id='$user_id'";
+        //query
+
+        mysqli_query($connect, $sql2);
+    }
+    else
+
+        //toto tu si prosim dajak peknucko
+        // toto tu
+        echo "nemas dost kreditov, sorry";
+
 }
 $result = mysqli_query($connect, "SELECT * FROM orders");
 
@@ -73,8 +93,8 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">pRoduct id:</th>
-                    <td name="product_id"><?php echo $row['product_id']; ?></td>
+                    <th scope="row">iMage title:</th>
+                    <td name="image_text" class="txtField"><?php echo $row['image_title']; ?></td>
                 </tr>
                 <tr>
                     <th scope="row">iMage teXt:</th>
@@ -83,6 +103,14 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
                 <tr>
                     <th scope="row">bRand:</th>
                     <td name="brand" class="txtField"><?php echo $row['brand']; ?></td>
+                </tr>
+                <tr>
+                    <th scope="row">size:</th>
+                    <td name="brand" class="txtField"><?php echo $row['size']; ?></td>
+                </tr>
+                <tr>
+                    <th scope="row">sex:</th>
+                    <td name="brand" class="txtField"><?php echo $row['sex']; ?></td>
                 </tr>
                 <tr>
                     <th scope="row">cAtegory:</th>
@@ -99,10 +127,7 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
                         ?>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">useR id:</th>
-                    <td name="user_id" class="txtField"><?php echo $_SESSION['user_id']; ?></td>
-                </tr>
+
                 <tr>
                     <th scope="row" style="background: black; color: #fff">cRedits:</th>
                     <td name="credits" class="txtField"><?php echo $row['credits']; ?></td>

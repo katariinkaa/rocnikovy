@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+
 // Starting the session, to use and 
 // store data in session variable 
 session_start();
@@ -90,7 +91,7 @@ if (isset($_GET['logout'])) {
 
     if (isset($_POST['update_data'])) {
 
-        mysqli_query($connect, "UPDATE users set user_id='" . $_POST['user_id'] . "', user_name='" . $_POST['user_name'] . "', user_email='" . $_POST['user_email'] . "' WHERE user_id='" . $_SESSION['user_id'] . "'");
+        mysqli_query($connect, "UPDATE users set user_id='" . $_SESSION['user_id'] . "', user_name='" . $_POST['user_name'] . "', user_email='" . $_POST['user_email'] . "', user_desc='" . $_POST['user_desc'] . "' WHERE user_id='" . $_SESSION['user_id'] . "'");
         // dostaneme nazov obrazku
 
 
@@ -111,13 +112,15 @@ if (isset($_GET['logout'])) {
                 <input type="text" class="form-control" name="user_name" value="<?php echo $_SESSION['user_name'] ?>">
             </div>
 
-            <div class="form-group">
-                <label for="" class="font">useR id</label>
-                <input type="text" class="form-control" name="user_id" value="<?php echo $_SESSION['user_id'] ?>"> </div>
+
 
             <div class="form-group">
                 <label for="" class="font">eMAil</label>
                 <input type="text" class="form-control" name="user_email" value="<?php echo $_SESSION['user_email'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="" class="font">popis</label>
+                <input type="textarea" class="form-control" name="user_desc" value="<?php echo $_SESSION['user_desc'] ?>" maxlength="300">
             </div>
 
             <div class="form-group">
@@ -207,9 +210,19 @@ if (isset($_GET['logout'])) {
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title font">poznaMka:</h5>
-                                    <p class="card-text my-4" style="line-height: 220%">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, eaque!</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="card-text my-4" style="line-height: 220%">
+                                        <?php
+                                            echo $_SESSION['user_desc'];
+                                        ?>
+                                    </p>
+
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <?php
+                                                echo $_SESSION['created_at'];
+                                            ?>
+                                        </small>
+                                    </p>
 
                                     <button type="button" value="ZMeeenit" class="btn zmenit font p-2">
                                         <a href="#">ZMenit <i class="far fa-edit"></i></a>
@@ -229,11 +242,9 @@ if (isset($_GET['logout'])) {
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     <tr>
-                                        <th scope="row">user id</th>
-                                        <td><?php echo $_SESSION['user_id']; ?></td>
-                                    </tr>
-                                    <tr>
+                                        <?php $_SESSION['user_id'];?>
                                         <th scope="row">user name</th>
                                         <td><?php echo $_SESSION['user_name']; ?></td>
                                     </tr>
@@ -247,7 +258,7 @@ if (isset($_GET['logout'])) {
                                     </tr>
                                     <tr>
                                         <th scope="row">pseudoniM</th>
-                                        <td>pseudonym</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -261,7 +272,7 @@ if (isset($_GET['logout'])) {
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <?php
                 include_once 'config.php';
-                $result = mysqli_query($connect, "SELECT * FROM items where user_id=$_SESSION[user_id];");
+                $result = mysqli_query($connect, "SELECT * FROM items where user_id=");
                 ?>
 
                 <table class="table table-bordered">

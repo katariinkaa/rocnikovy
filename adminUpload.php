@@ -12,15 +12,18 @@ if (isset($_POST['upload'])) {
 	// dostaneme text
 	$image_text = mysqli_real_escape_string($connect, $_POST['image_text']);
 	$credits = mysqli_real_escape_string($connect, $_POST['credits']);
+    $image_title = mysqli_real_escape_string($connect, $_POST['image_title']);
 	$brand = mysqli_real_escape_string($connect, $_POST['brand']);
 	$category = mysqli_real_escape_string($connect, $_POST['category']);
+    $size = mysqli_real_escape_string($connect, $_POST['size']);
+    $sex = mysqli_real_escape_string($connect, $_POST['sex']);
 	$user_id = mysqli_real_escape_string($connect, $_POST['user_id']);
 
 	// ukladanie do adresara images
 	$target = "images/" . basename($image);
 
-	$sql = "INSERT INTO items (image, image_text, credits, brand, category, user_id)
-             VALUES ('$image', '$image_text', '$credits', '$brand', '$category', '$user_id')";
+	$sql = "INSERT INTO items (image, image_title, image_text, credits, brand, category, size, sex, user_id, order_status)
+             VALUES ('$image', '$image_title', '$image_text', '$credits', '$brand', '$category', '$size', '$sex', '$user_id', '1')";
 	//query
 	mysqli_query($connect, $sql);
 
@@ -132,7 +135,7 @@ $result = mysqli_query($connect, "SELECT * FROM items");
 			<!-- Výber obrázka -->
 			<div class="input-group mb-3 font">
 				<div class="custom-file">
-					<input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+					<input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="image">
 					<label class="custom-file-label" for="inputGroupFile04">cHoose file</label>
 				</div>
 			</div>
@@ -143,8 +146,8 @@ $result = mysqli_query($connect, "SELECT * FROM items");
 
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="" class="font">cRedits</label>
-					<input type="text" name="credits" class="form-control">
+					<label for="" class="font">image title</label>
+					<input type="text" name="image_title" class="form-control">
 				</div>
 
 				<div class="form-group col-md-6">
@@ -152,6 +155,21 @@ $result = mysqli_query($connect, "SELECT * FROM items");
 					<input type="text" name="brand" class="form-control">
 				</div>
 			</div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="" class="font">cRedits</label>
+                    <input type="text" name="credits" class="form-control">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="" class="font">size</label>
+                    <input type="text" name="size" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="" class="font">sex</label>
+                    <input type="text" name="sex" class="form-control">
+                </div>
+            </div>
 
 			<div class="form-group">
 				<label for="" class="font">cAteGoRy</label>

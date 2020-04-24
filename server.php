@@ -11,6 +11,8 @@ $userid = "";
 $email = "";
 $roles="";
 $tokens="";
+$userdesc="";
+$createdat="";
 $errors = array();
 $_SESSION['success'] = "";
 
@@ -29,6 +31,8 @@ if (isset($_POST['reg_user'])) {
 	$email = mysqli_real_escape_string($db, $_POST['user_email']);
 	$userid = mysqli_real_escape_string($db, $_POST['user_id']);
 	$roles = mysqli_real_escape_string($db, $_POST['user_roles']);
+	$userdesc = mysqli_real_escape_string($db, $_POST['user_desc']);
+	$createdat=mysqli_real_escape_string($db, $_POST['created_at']);
 	$tokens = mysqli_real_escape_string($db, $_POST['user_tokens']);
 	$password_1 = mysqli_real_escape_string($db, $_POST['user_pass_1']);
 	$password_2 = mysqli_real_escape_string($db, $_POST['user_pass_2']);
@@ -64,6 +68,8 @@ if (isset($_POST['reg_user'])) {
 		$_SESSION['user_id'] = $userid;
 		$_SESSION['user_roles'] = $roles;
 		$_SESSION['user_tokens'] = $tokens;
+		$_SESSION['user_desc'] = $userdesc;
+		$_SESSION['created_at'] = $createdat;
 
 
 
@@ -112,6 +118,8 @@ if (isset($_POST['login_user'])) {
 			$email = $users['user_email'];
 			$roles = $users['user_roles'];
 			$tokens = $users['user_tokens'];
+			$userdesc = $users['user_desc'];
+			$createdat = $users['created_at'];
 
 
 			// Storing username in session variable
@@ -120,6 +128,8 @@ if (isset($_POST['login_user'])) {
 			$_SESSION['user_email'] = $email;
 			$_SESSION['user_roles'] = $roles;
 			$_SESSION['user_tokens'] = $tokens;
+			$_SESSION['user_desc'] = $userdesc;
+			$_SESSION['created_at'] = $createdat;
 
 			// Welcome message
 			$_SESSION['success'] = "you HAve loGGed in!";
