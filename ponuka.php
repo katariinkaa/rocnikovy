@@ -44,9 +44,9 @@ if (isset($_GET['logout'])) {
         <div class="row py-3 pl-3 menu">
             <h1><a href="index.php">n<i>&</i>n</a></h1>
 
-            <button class="font odhlasit py-3" type="button" value="odHlAsit" name="logout">
-                <a href="index.php?logout='1'" class="py-5 px-5"> loGout</a>
-            </button>
+            <div class="kredit">
+                <h1 class="h5 font">kReditov - <?php echo $_SESSION['user_tokens']; ?></h1>
+            </div>
         </div>
 
         <div class="row">
@@ -213,7 +213,9 @@ if (isset($_GET['logout'])) {
                             <ul class="linky">
                                 <li><button type="submit" name="submit">filtruj</button></li>
 
-                                <li><a href="#">poRta</a></li>
+                                <li class="odhlasit">
+                                    <a href="index.php?logout='1'" class="py-5 px-5"> loGout</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -260,61 +262,71 @@ if (isset($_GET['logout'])) {
                                 //filtre pre ponuku
                                 if (!isset($_POST['submit'])) {
                                     $results = mysqli_query($connect, "SELECT * FROM items WHERE order_status=1");
-                                }
-                                else{
-                                    $brand=array();
-                                    $brand = implode(",", (array)$_POST['brand']);
-                                    $size=array();
-                                    $size = implode(",", (array)$_POST['size']);
-                                    $sex=array();
-                                    $sex = implode(",", (array)$_POST['sex']);
+                                } else {
+                                    $brand = array();
+                                    $brand = implode(",", (array) $_POST['brand']);
+                                    $size = array();
+                                    $size = implode(",", (array) $_POST['size']);
+                                    $sex = array();
+                                    $sex = implode(",", (array) $_POST['sex']);
                                     //ak je zadana iba velkost
-                                    if(empty($brand)&&empty($sex)&&!empty($size)) {
+                                    if (empty($brand) && empty($sex) && !empty($size)) {
 
-                                       // echo "size vidim";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE size = '$size'");
+                                        // echo "size vidim";
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE size = '$size'"
+                                        );
                                     }
                                     //ak je zadana iba znacka
-                                    elseif(!empty($brand)&&empty($sex)&&empty($size)) {
+                                    elseif (!empty($brand) && empty($sex) && empty($size)) {
 
                                         //echo "znacku vidim";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE brand = '$brand'");
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE brand = '$brand'"
+                                        );
                                     }
                                     //ak je zadane iba pohlavie
-                                    elseif(empty($brand)&&!empty($sex)&&empty($size)) {
+                                    elseif (empty($brand) && !empty($sex) && empty($size)) {
                                         //echo "pohlavie vidim";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE sex = '$sex'");
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE sex = '$sex'"
+                                        );
                                     }
                                     //zadana velkost aj pohlavie
-                                    elseif (empty($brand)&&!empty($sex)&&!empty($size)){
+                                    elseif (empty($brand) && !empty($sex) && !empty($size)) {
                                         //echo "size a pohlavie";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE size = '$size' AND sex = '$sex'");
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE size = '$size' AND sex = '$sex'"
+                                        );
                                     }
                                     //zadana velkost aj znacka
-                                    elseif (!empty($brand)&&empty($sex)&&!empty($size)){
+                                    elseif (!empty($brand) && empty($sex) && !empty($size)) {
                                         //echo "size a znacka";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE size = '$size' AND brand = '$brand'");
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE size = '$size' AND brand = '$brand'"
+                                        );
                                     }
                                     //zadana znacka aj pohlavie
-                                    elseif (!empty($brand)&&!empty($sex)&&empty($size)){
+                                    elseif (!empty($brand) && !empty($sex) && empty($size)) {
                                         //echo "znacka a pohlavie";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE brand = '$brand' AND sex = '$sex'");
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE brand = '$brand' AND sex = '$sex'"
+                                        );
                                     }
                                     //zadana znacka aj pohlavie aj velkost
-                                    elseif (!empty($brand)&&!empty($sex)&&!empty($size)){
+                                    elseif (!empty($brand) && !empty($sex) && !empty($size)) {
                                         //echo "znacka a pohlavie a velkost";
-                                        $results = mysqli_query($connect,
-                                            "SELECT * FROM items WHERE brand = '$brand' AND sex = '$sex' AND size = '$size'");
+                                        $results = mysqli_query(
+                                            $connect,
+                                            "SELECT * FROM items WHERE brand = '$brand' AND sex = '$sex' AND size = '$size'"
+                                        );
                                     }
-
-
-
                                 }
 
                                 while ($row = @mysqli_fetch_array($results)) {
@@ -330,7 +342,7 @@ if (isset($_GET['logout'])) {
 
                                         "<div class='txt'>" .
 
-                                        "<h1>". $row["image_title"] . "</h1>" .
+                                        "<h1>" . $row["image_title"] . "</h1>" .
 
                                         "<i>" . $row["credits"] . "kR</i>" .
                                         "<p>" . $row["image_text"] . "</p>" .

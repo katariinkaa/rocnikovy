@@ -57,7 +57,7 @@ $result = mysqli_query($connect, "SELECT * FROM items ");
 
                         <td><?php echo $row["uploaded_on"]; ?></td>
 
-                        <td><a href="adminUpdateItem.php?product_id=<?php echo $row["product_id"]; ?>">Update</a></td>
+                        <td><a href="adminUpdateItem.php?product_id=<?php echo $row["product_id"]; ?>" class="btn font">update</a></td>
                     </tr>
                 <?php
                     $i++;

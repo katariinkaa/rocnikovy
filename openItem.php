@@ -19,7 +19,7 @@ if (isset($_POST['submit_order'])) {
     $user_id = $_SESSION['user_id'];
     $product_id = $_GET['product_id'];
     $credits = $row['credits'];
-    $user_tokens=$_SESSION['user_tokens'];
+    $user_tokens = $_SESSION['user_tokens'];
 
     $user_email = $_SESSION['user_email'];
     $name = mysqli_real_escape_string($connect, $_POST['name']);
@@ -29,8 +29,8 @@ if (isset($_POST['submit_order'])) {
     $phone_number = mysqli_real_escape_string($connect, $_POST['phone_number']);
 
 
-    $user_credits=($user_tokens)-($credits);
-    if($user_credits>=0) {
+    $user_credits = ($user_tokens) - ($credits);
+    if ($user_credits >= 0) {
 
         $sql = "INSERT INTO orders (product_id, user_id, name, user_street, user_city, user_zip, user_email, phone_number, credits, order_status)
              VALUES ('$product_id', '$user_id', '$name', '$user_street', '$user_city','$user_zip',
@@ -47,13 +47,11 @@ if (isset($_POST['submit_order'])) {
         //query
 
         mysqli_query($connect, $sql2);
-    }
-    else
+    } else
 
         //toto tu si prosim dajak peknucko
         // toto tu
-        echo "nemas dost kreditov, sorry";
-
+        echo "<p class='peknucko font h3'>neMas dost kReditov, soRRy</p>";
 }
 $result = mysqli_query($connect, "SELECT * FROM orders");
 
@@ -80,9 +78,19 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
     <!-- Product ID -->
     <input type="hidden" name="product_id" class="txtField" value="<?php echo $row['product_id']; ?>">
 
+
+    <div class="py-3 pl-3 menu font mb-5">
+        <h1><a href="index.php">n<i>&</i>n</a></h1>
+
+        <div class="kredit">
+            <h1 class="h5">kReditov - <?php echo $_SESSION['user_tokens']; ?></h1>
+        </div>
+    </div>
+
+
     <div>
         <!-- Image -->
-        <img name="image" class="txtField col-md-4 float-left" src="images/<?php echo $row['image']; ?>" width=200>
+        <img name="image" class="txtField col-md-4 float-left my-4" src="images/<?php echo $row['image']; ?>" width=200>
 
         <table class="table table-bordered col-md-8">
             <thead>
@@ -135,7 +143,7 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
             </tbody>
         </table>
 
-        <a class="btn btn-primary font " id="slide">objednAt <i class="fas fa-chevron-down"></i></a>
+        <a class="btn btn-primary font ml-3" id="slide">objednAt <i class="fas fa-chevron-down"></i></a>
 
         <a href="ponuka.php" class="btn btn-primary font">pRoduct list</a>
 

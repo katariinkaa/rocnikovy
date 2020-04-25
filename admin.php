@@ -51,7 +51,7 @@ $result = mysqli_query($connect, "SELECT * FROM users");
                         <td><?php echo $row["user_email"]; ?></td>
                         <td><?php echo $row["user_tokens"]; ?></td>
                         <td><?php echo $row["user_roles"]; ?></td>
-                        <td><a href="adminUpdate.php?user_id=<?php echo $row["user_id"]; ?>">Update</a></td>
+                        <td><a href="adminUpdate.php?user_id=<?php echo $row["user_id"]; ?>" class="btn font">update</a></td>
                     </tr>
                 <?php
                     $i++;
