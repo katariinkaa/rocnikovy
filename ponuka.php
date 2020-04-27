@@ -25,9 +25,9 @@ if (isset($_GET['logout'])) {
     <title>Document</title>
 
     <!-- reset -->
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="../css/ponuka.css">
+    <link rel="stylesheet" type="text/css" href="css/ponuka.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- písmo -->
@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
             <h1><a href="index.php">n<i>&</i>n</a></h1>
 
             <div class="kredit">
-                <h1 class="h5 font">kReditov - <?php echo $_SESSION['user_tokens']; ?></h1>
+                <h1 class="h5 font">kReditov<?php echo $_SESSION['user_tokens']; ?></h1>
             </div>
         </div>
 

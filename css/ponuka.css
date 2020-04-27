@@ -17,38 +17,50 @@ a {
     border: none !important; 
 }
 
+
+.kredit {
+    position: absolute;
+    top: 4vh;
+    right: 2vw;
+}
+
+.menu {
+    background-color: #ffcc00;
+}
+
+h1 a {
+    color: black;
+}
+
+h1 a i {
+    color: white;
+    transition: .5s;
+}
+
+h1 a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+h1 a:hover i {
+    color: black;
+}
+
+
+
+
+
+
 /* Nav */
 .odhlasit {
-    position: absolute;
-    right: 1%;
     background-color: #000 !important;
     border: none;
     border-radius: 4px;
 }
 .odhlasit a {
-    color: #ffcc00; 
+    color: #ffcc00 !important; 
 }
-.odhlasit a:hover {
-    color: #ffcc00;
-    text-decoration: none;
-}
-.menu {
-    background-color: #ffcc00;
-}
-h1 a {
-    color: black;
-}
-h1 a i {
-    color: white;
-    transition: .5s;
-}
-h1 a:hover {
-    color: white;
-    cursor: pointer;
-}
-h1 a:hover i {
-    color: black;
-}
+
 
 /* Produkty */
 

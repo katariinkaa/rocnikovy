@@ -59,6 +59,12 @@ $(document).on('keyup', function (event) {
 });
 
 
+/* 
+ * Peknucko zmiznutie
+ */
+
+$('.peknucko').delay(3000).fadeOut();
+
 
 /*
  * Slider v menu

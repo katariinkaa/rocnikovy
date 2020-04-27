@@ -8,6 +8,10 @@
     <title>Document</title>
 
     <style>
+        a {
+            text-decoration: none !important;
+        }
+
         /* tma */
         .tma {
             width: 100%;
@@ -97,36 +101,12 @@
         }
 
         .roll li {
-            margin: 20% 0 10% 30%;
+            margin: 10% 0 10% 30%;
         }
+
         .roll li:hover {
             color: #ffcc00;
         }
-
-        /* .kys {
-            position: relative;
-            width: 100%;
-            height: 15vh;
-        } */
-
-        /* nav pod ciarov */
-        /* .soc {
-            border-top: 1px solid #ffcc00;
-            position: relative;
-            width: 90%;
-            height: 15vh;
-            padding-top: 5%;
-            margin: 0 5% 0 5%;
-        }
-
-        .soc i {
-            position: relative;
-        }
-
-        .soc li {
-            display: inline;
-            margin: 0 5% 0 10%;
-        } */
 
         /* 
          * @media_queries
@@ -187,6 +167,7 @@
 
         <h2>Menu :</h2>
         <ul>
+            <li><a href="index.php">doMov</a></li>
             <li><a href="ponuka.php">ponukA</a></li>
             <li><a href="contact.php">contAct</a></li>
             <li><a href="register.php">ReGisteR</a></li>

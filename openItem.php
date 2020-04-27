@@ -78,6 +78,7 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
     <!-- Product ID -->
     <input type="hidden" name="product_id" class="txtField" value="<?php echo $row['product_id']; ?>">
 
+    <?php require_once "pcs/nav/nav.php" ?>
 
     <div class="py-3 pl-3 menu font mb-5">
         <h1><a href="index.php">n<i>&</i>n</a></h1>
