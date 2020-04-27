@@ -1,9 +1,7 @@
 <?php
-// upravit linky na admin rozhrani (tie co su modre)
-// v openItem pridat hore kolko kreditov ma user nech ma lepsi prehlad
-// error message v pripade, ze nema dostatok kreditov (echo zakomentovane v open item)
-// take to menu v adminUpload na vyber pohlavia (zena/muz) a na vyber znacky + mozno velkosti
-// ked si otvoris dany produkt tak aby trosku centrovalo obrazok lebo dava ho aspon mne uplne hore
+// v openItem ten header alebo nav kde pise logo N&N a kredity rozhadzuje mi
+// sprava ze nemas dost kreditov sa mi vypise len hore a nie ako okno
+// kredity v ponuke pise rovno hore pri N&N a nie napravo
 ?>
 
 
@@ -49,7 +47,7 @@
                     <div class="flip-card-inner">
                         <div class="uvod flip-card-front font">
                             <h1>nekupuj <i>noVe</i></h1>
-                            <p>i HAte u</p>
+                            <p>welcome</p>
                             <p>lorem ipsum dolor sit amet consectetur adipisicing elit Ratione laborum.</p>
                         </div>
                         <div class="flip-card-back container-fluid">

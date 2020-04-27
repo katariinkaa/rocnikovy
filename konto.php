@@ -257,7 +257,7 @@ if (isset($_GET['logout'])) {
                                         <td><?php echo $_SESSION['user_email']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">pseudoniM</th>
+                                        <th scope="row">pseudonyM</th>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -271,40 +271,46 @@ if (isset($_GET['logout'])) {
 
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <?php
-                include_once 'config.php';
-                $result = mysqli_query($connect, "SELECT * FROM items where user_id=");
-                ?>
 
+
+                include_once 'config.php';
+                $result = mysqli_query($connect, "SELECT * FROM items where user_id='".$_SESSION['user_id']."';");
+
+
+                ?>
                 <table class="table table-bordered">
                     <thead class="font">
-                        <tr>
-                            <td>pRoduct id</td>
-                            <td>iMaGe text</td>
-                            <td>iMage</td>
-                            <td>uploaded on</td>
-                        </tr>
+                    <tr>
+                        <td>pRoduct id</td>
+                        <td>Image Title</td>
+                        <td>Image</td>
+                        <td>cRedits</td>
+                        <td>uploaded on</td>
+
+                    </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        $i = 0;
-                        while ($row = mysqli_fetch_array($result)) {
-                            if ($i % 2 == 0)
-                                $classname = "even";
-                            else
-                                $classname = "odd";
+                    <?php
+                    $i = 0;
+                    while ($row = mysqli_fetch_array($result)) {
+                        if ($i % 2 == 0)
+                            $classname = "even";
+                        else
+                            $classname = "odd";
                         ?>
-                            <tr class="<?php if (isset($classname)) echo $classname; ?>">
-                                <td><?php echo $row["product_id"]; ?></td>
-                                <td><?php echo $row["image_text"]; ?></td>
+                        <tr class="<?php if (isset($classname)) echo $classname; ?>">
+                            <td><?php echo $row["product_id"]; ?></td>
+                            <td><?php echo $row["image_title"]; ?></td>
 
-                                <td><img src="img/<?php echo $row["image"] ?>" width="60"> </td>
-
-                                <td><?php echo $row["uploaded_on"]; ?></td>
-                            </tr>
+                            <td><img src="images/<?php echo $row['image'] ?>" width="60"> </td>
+                            <td><?php echo $row["credits"]; ?></td>
+                            <td><?php echo $row["uploaded_on"]; ?></td>
+                        </tr>
                         <?php
-                            $i++;
-                        }
-                        ?>
+                        $i++;
+                    }
+                    ?>
+
                     </tbody>
                 </table>
             </div>
@@ -312,16 +318,19 @@ if (isset($_GET['logout'])) {
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <?php
                 include_once 'config.php';
-                $result = mysqli_query($connect, "SELECT * FROM orders where user_id=$_SESSION[user_id];");
+                $result = mysqli_query($connect, "SELECT * FROM orders where user_id='".$_SESSION['user_id']."';");
+
 
 
                 ?>
                 <table class="table table-bordered">
                     <thead class="font">
                         <tr>
-                            <td>pRoduct id</td>
-                            <td>useR id</td>
-                            <td>oRder id</td>
+                            <td>Order id</td>
+                            <td>name</td>
+                            <td>user street</td>
+                            <td>user city</td>
+                            <td>user zip</td>
                             <td>cRedits</td>
                             <td>oRdeR stAtus</td>
 
@@ -337,9 +346,11 @@ if (isset($_GET['logout'])) {
                                 $classname = "odd";
                         ?>
                             <tr class="<?php if (isset($classname)) echo $classname; ?>">
-                                <td><?php echo $row["product_id"]; ?></td>
-                                <td><?php echo $row["user_id"]; ?></td>
-                                <td><?php echo $row["order_id"] ?></td>
+                                <td><?php echo $row["order_id"]; ?></td>
+                                <td><?php echo $row["name"]; ?></td>
+                                <td><?php echo $row["user_street"] ?></td>
+                                <td><?php echo $row["user_city"] ?></td>
+                                <td><?php echo $row["user_zip"] ?></td>
                                 <td><?php echo $row["credits"] ?></td>
                                 <td><?php echo $row["order_status"] ?></td>
 

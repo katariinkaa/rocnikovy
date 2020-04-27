@@ -53,7 +53,7 @@ $result = mysqli_query($connect, "SELECT * FROM items ");
                         <td><?php echo $row["product_id"]; ?></td>
                         <td><?php echo $row["image_text"]; ?></td>
 
-                        <td><img src="img/<?php echo $row["image"] ?>" width="60"> </td>
+                        <td><img src="/images/<?php echo $row["image"]; ?>" width="60"> </td>
 
                         <td><?php echo $row["uploaded_on"]; ?></td>
 

@@ -156,32 +156,32 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
 
                 <div class="form-group col-md-4">
                     <label for="">name and surname</label>
-                    <input class="form-control" name="name" type="text" value="" size="30" />
+                    <input class="form-control" name="name" type="text" value="" size="30" required />
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="">email</label>
-                    <input class="form-control" name="user_email" type="text" id="email" value="<?php echo $_SESSION['user_email']; ?>" size="30" />
+                    <input class="form-control" name="user_email" type="text" id="email" value="<?php echo $_SESSION['user_email']; ?>" size="30" required/>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="">address</label>
-                    <input class="form-control" name="user_street" type="text" id="address" value="" size="30" />
+                    <input class="form-control" name="user_street" type="text" id="address" value="" size="30" required/>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="">city</label>
-                    <input class="form-control" name="user_city" type="text" id="city" value="" size="30" />
+                    <input class="form-control" name="user_city" type="text" id="city" value="" size="30" required/>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="">zip code</label>
-                    <input class="form-control" name="user_zip" type="text" id="zip_code" value="" size="30" />
+                    <input class="form-control" name="user_zip" type="text" id="zip_code" value="" size="30" required/>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="">phone number</label>
-                    <input class="form-control" name="phone_number" type="text" id="phone_number" value="" size="30" />
+                    <input class="form-control" name="phone_number" type="text" id="phone_number" value="" size="30" required/>
                 </div>
 
                 <div class="form-group col-md-12">
