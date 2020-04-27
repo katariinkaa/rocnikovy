@@ -88,6 +88,7 @@ if (isset($_GET['logout'])) {
 
     <?php endif ?>
     <?php
+    $result = mysqli_query($connect, "SELECT * FROM users WHERE  user_id='" . $_SESSION['user_id'] . "' ");
 
     if (isset($_POST['update_data'])) {
 
@@ -202,7 +203,7 @@ if (isset($_GET['logout'])) {
                     <div class="card col-md-6 mx-auto p-0 br">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="../img/rick.png" class="card-img m-1 br" alt="...">
+                                <img src="../img/profile-2092113_640.png" class="card-img m-1 br" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -239,24 +240,35 @@ if (isset($_GET['logout'])) {
                                     </tr>
                                 </thead>
                                 <tbody>
+                              <?php  $i = 0;
+                                while ($row = mysqli_fetch_array($result)) {
+                                if ($i % 2 == 0)
+                                $classname = "even";
+                                else
+                                $classname = "odd";
+                                ?>
 
-                                    <tr>
+                                    <tr class="<?php if (isset($classname)) echo $classname; ?>">
                                         <?php $_SESSION['user_id'];?>
                                         <th scope="row">username</th>
-                                        <td><?php echo $_SESSION['user_name']; ?></td>
+                                        <td><?php echo $row['user_name']; ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">user Role</th>
-                                        <td><?php echo $_SESSION['user_roles']; ?></td>
+                                        <td><?php echo $row['user_roles']; ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">user email</th>
-                                        <td><?php echo $_SESSION['user_email']; ?></td>
+                                        <td><?php echo $row['user_email']; ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">credits</th>
-                                        <td><?php echo $_SESSION['user_tokens'];?></td>
+                                        <td><?php echo $row['user_tokens'];?></td>
                                     </tr>
+                                    <?php
+                                    $i++;
+                                }
+                              ?>
                                 </tbody>
                             </table>
                         </div>
