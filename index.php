@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>NekupujNove</title>
+    <title>NekupujNove.sk/Home</title>
 
     <!-- reset -->
     <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -55,18 +55,18 @@
                             <form method="post" action="index.php" class="px-4">
                                 <?php include('errors.php'); ?>
                                 <div class="form-group mb-4">
-                                    <label for="exampleInputEmail1" class="font">Meno</label>
+                                    <label for="exampleInputEmail1" class="font">username</label>
                                     <input type="text" name="user_name" class="form-control">
                                 </div>
                                 <div class="form-group mb-5">
-                                    <label for="exampleInputEmail1" class="font">Heslo</label>
+                                    <label for="exampleInputEmail1" class="font">password</label>
                                     <input type="password" name="user_pass" class="form-control">
                                 </div>
                                 <div class="row">
                                     <button type="submit" class="log font mx-auto" name="login_user">loG-in</button>
                                 </div>
                                 <div class="row">
-                                    <a href="register.php" class="mx-auto font">ReGistRAciA</a>
+                                    <a href="register.php" class="mx-auto font">ReGistRAtion</a>
                                 </div>
                             </form>
 
@@ -79,7 +79,7 @@
                 <div class="oblecenie kocky col-md-12">
                     <div class="black up"></div>
                     <div class="text font up">
-                        <h1>oblecenie</h1>
+                        <h1>clothes</h1>
                         <a href='ponuka.php?category="oblecenie" ?>'>HeRe</a>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="elektronika kocky col-md-12">
                     <div class="black right"></div>
                     <div class="text font right">
-                        <h1>domacnost</h1>
+                        <h1>home</h1>
                         <a href="#">HeRe</a>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="domacnost kocky col-md-12">
                     <div class="black left"></div>
                     <div class="text font left">
-                        <h1>eleKtRo</h1>
+                        <h1>technology</h1>
                         <a href="#">HeRe</a>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                 <div class="novinky kocky col-md-12">
                     <div class="black down"></div>
                     <div class="text font down">
-                        <h1>noVinKy</h1>
+                        <h1>news</h1>
                         <a href="#">HeRe</a>
                     </div>
                 </div>

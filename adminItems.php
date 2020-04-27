@@ -33,8 +33,13 @@ $result = mysqli_query($connect, "SELECT * FROM items ");
         <table class="table table-bordered">
             <thead class="thead font">
                 <tr>
-                    <th scope="col">pRoduct id</th>
+                    <th scope="col">id</th>
                     <th scope="col">image teXt</th>
+                    <th scope="col">bRAnd</th>
+                    <th scope="col">useR id</th>
+                    <th scope="col">cRedits</th>
+                    <th scope="col">stock</th>
+                    <th scope="col">categoRy</th>
                     <th scope="col">iMAGe</th>
                     <th scope="col">uploAded on</th>
                     <th scope="col">updAte</th>
@@ -52,12 +57,17 @@ $result = mysqli_query($connect, "SELECT * FROM items ");
                     <tr class="<?php if (isset($classname)) echo $classname; ?>">
                         <td><?php echo $row["product_id"]; ?></td>
                         <td><?php echo $row["image_text"]; ?></td>
+                        <td><?php echo $row["brand"]; ?></td>
+                        <td><?php echo $row["user_id"]; ?></td>
+                        <td><?php echo $row["credits"]; ?></td>
+                        <td><?php echo $row["order_status"]; ?></td>
+                        <td><?php echo $row["category"]; ?></td>
 
                         <td><img src="/images/<?php echo $row["image"]; ?>" width="60"> </td>
 
                         <td><?php echo $row["uploaded_on"]; ?></td>
 
-                        <td><a href="adminUpdateItem.php?product_id=<?php echo $row["product_id"]; ?>" class="btn font">update</a></td>
+                        <td><a href="adminUpdateItem.php?product_id=<?php echo $row["product_id"];?>" class="btn font">update</a></td>
                     </tr>
                 <?php
                     $i++;

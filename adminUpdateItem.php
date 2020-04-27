@@ -1,11 +1,13 @@
 <?php
 include_once 'config.php';
 if (count($_POST) > 0) {
-    mysqli_query($connect, "UPDATE items 
-set product_id='" . $_POST['product_id'] . "', image_text='" . $_POST['image_text'] . "', image='" . $_POST['image'] . "', uploaded_on='" . $_POST['uploaded_on'] . "' 
-brand='" . $_POST['brand'] . "', category='" . $_POST['category'] . "',credits='" . $_POST['credits'] . "',order_status='" . $_POST['order_status'] . "', user_id='" . $_POST['user_id'] . "'
- WHERE product_id='" . $_POST['product_id'] . "'");
+    mysqli_query($connect, "
+UPDATE items set product_id='" . $_POST['product_id'] . "', image_text='" . $_POST['image_text'] . "',
+ image='" . $_POST['image'] . "', uploaded_on='" . $_POST['uploaded_on'] . "' ,brand='" . $_POST['brand'] . "'
+ , user_id='" . $_POST['user_id'] . "', credits='" . $_POST['credits'] . "' , order_status='" . $_POST['order_status'] . "',
+ category='" . $_POST['category'] . "', image_title='jj', size='uu', sex='zienka 'WHERE product_id='" . $_POST['product_id'] . "'");
     $message = "Record Modified Successfully";
+    header("Location:adminItems.php");
 }
 $result = mysqli_query($connect, "SELECT * FROM items WHERE product_id='" . $_GET['product_id'] . "'");
 $row = mysqli_fetch_array($result);
@@ -97,7 +99,7 @@ $row = mysqli_fetch_array($result);
                 <input type="text" name="category" class="txtField form-control" value="<?php echo $row['category']; ?>">
             </div>
 
-            <input type="submit" name="submit" value="subMit" class="buttom btn col-md-3 py-3 my-3">
+            <button type="submit" name="submit" value="subMit" class="buttom btn col-md-3 py-3 my-3">submit</button>
         </form>
     </div>
 

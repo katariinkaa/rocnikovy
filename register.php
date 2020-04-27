@@ -33,14 +33,13 @@
         <div class="container col-md-7 mb-5">
             <div class="row">
                 <div class="col-sm my-5">
-                    <h1>ReGisteR</h1>
+                    <h1>ReGistRation foRm</h1>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm">
-                    <p class="pb-5">lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Ab sapiente excepturi
-                        tempora, temporibus esse repellend. </p>
+                    <p class="pb-5"></p>
                 </div>
             </div>
         </div>
@@ -50,7 +49,7 @@
         <div class="container col-md-7">
             <form action="register.php" method="post">
                 <?php include('errors.php'); ?>
-                <div class="form-row">
+                <!--<div class="form-row">
                     <div class="form-group col-md">
                         <label for="">fiRst nAMe</label>
                         <input type="text" class="form-control">
@@ -61,37 +60,37 @@
                         <input type="text" class="form-control">
                     </div>
                 </div>
-
+                -->
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="">pppPseudoniM</label>
+                        <label for="">*username</label>
                         <input type="text" class="form-control" name="user_name" value="<?php echo $username; ?>">
                     </div>
-
+                    <!--
                     <div class="form-group col-md">
                         <label for="">pHone nuMbeR</label>
                         <input type="text" class="form-control">
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="form-group">
-                    <label for="">eMAil</label>
+                    <label for="">*eMAil</label>
                     <input type="text" class="form-control" name="user_email" value="<?php echo $email; ?>">
                 </div>
 
                 <div class="form-group">
-                    <label for="">pAssWoRdc :-(</label>
+                    <label for="">*pAssWoRd</label>
                     <input type="password" class="form-control" name="user_pass_1">
                 </div>
 
                 <div class="form-group">
-                    <label for="">pAssWoRd AGAin :-)</label>
+                    <label for="">*pAssWoRd AGAin</label>
                     <input type="password" class="form-control" name="user_pass_2">
                 </div>
 
                 <div class="form-group form-check my-5">
-                    <input type="checkbox" class="form-check-input">
-                    <label class="form-check-label" for="">i Acept</label>
+
+                    <label class="form-check-label" for="">*mandatory data</label>
                 </div>
 
                 <button type="submit" class="btn col-md-3 py-3 my-3" name="reg_user">ReGisteR Me</button>

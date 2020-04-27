@@ -101,14 +101,14 @@ if (isset($_GET['logout'])) {
 
     <div class="zmena p-5">
 
-        <h1 class="font">pRofil</h1>
+        <h1 class="font">pRofile</h1>
 
         <i class="fas fa-times"></i>
 
         <form action="konto.php" method="post">
 
             <div class="form-group">
-                <label for="" class="font">Meno</label>
+                <label for="" class="font">username</label>
                 <input type="text" class="form-control" name="user_name" value="<?php echo $_SESSION['user_name'] ?>">
             </div>
 
@@ -119,17 +119,14 @@ if (isset($_GET['logout'])) {
                 <input type="text" class="form-control" name="user_email" value="<?php echo $_SESSION['user_email'] ?>">
             </div>
             <div class="form-group">
-                <label for="" class="font">popis</label>
+                <label for="" class="font">note</label>
                 <input type="textarea" class="form-control" name="user_desc" value="<?php echo $_SESSION['user_desc'] ?>" maxlength="300">
             </div>
 
-            <div class="form-group">
-                <label for="" class="font">pseudoniM</label>
-                <input type="text" class="form-control">
-            </div>
+
 
             <div class="form-group">
-                <label for="" class="font">pRofil pHoto</label>
+                <label for="" class="font">pRofile pHoto</label>
                 <div class="input-group">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="inputGroupFile02" name="image">
@@ -138,7 +135,7 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <button type="submit" class="btn zmenit pos py-2 font" name="update_data"><i class="far fa-edit"></i> ZMenit</button>
+            <button type="submit" class="btn zmenit pos py-2 font" name="update_data"><i class="far fa-edit"></i>update</button>
 
         </form>
     </div>
@@ -149,7 +146,7 @@ if (isset($_GET['logout'])) {
 
 
     <div class="kredit">
-        <h1 class="h6 font">kReditov - <?php echo $_SESSION['user_tokens']; ?></h1>
+        <h1 class="h6 font">youR cRedits:<?php echo $_SESSION['user_tokens']; ?></h1>
     </div>
 
 
@@ -163,7 +160,7 @@ if (isset($_GET['logout'])) {
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
                 </li><br>
                 <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">nAHRAne-Veci</a>
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">uploaded products</a>
                 </li><br>
                 <li class="nav-item">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">objednAvky</a>
@@ -182,13 +179,13 @@ if (isset($_GET['logout'])) {
     <div class="container-fluid">
         <ul class="nav nav-pills my-3 font nav_A" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">nAHRAne-Veci</a>
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">uploaded-products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">objednAvky</a>
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">my-orders</a>
             </li>
             <li class="nav-item ml-1">
                 <button type="button" value="odHlAsit" name="logout" class="btn p-0 odhlasit">
@@ -209,7 +206,7 @@ if (isset($_GET['logout'])) {
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title font">poznaMka:</h5>
+                                    <h5 class="card-title font">note:</h5>
                                     <p class="card-text my-4" style="line-height: 220%">
                                         <?php
                                             echo $_SESSION['user_desc'];
@@ -225,7 +222,7 @@ if (isset($_GET['logout'])) {
                                     </p>
 
                                     <button type="button" value="ZMeeenit" class="btn zmenit font p-2">
-                                        <a href="#">ZMenit <i class="far fa-edit"></i></a>
+                                        <a href="#">update <i class="far fa-edit"></i></a>
                                     </button>
                                 </div>
                             </div>
@@ -245,11 +242,11 @@ if (isset($_GET['logout'])) {
 
                                     <tr>
                                         <?php $_SESSION['user_id'];?>
-                                        <th scope="row">user name</th>
+                                        <th scope="row">username</th>
                                         <td><?php echo $_SESSION['user_name']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">user Roles</th>
+                                        <th scope="row">user Role</th>
                                         <td><?php echo $_SESSION['user_roles']; ?></td>
                                     </tr>
                                     <tr>
@@ -257,8 +254,8 @@ if (isset($_GET['logout'])) {
                                         <td><?php echo $_SESSION['user_email']; ?></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">pseudonyM</th>
-                                        <td></td>
+                                        <th scope="row">credits</th>
+                                        <td><?php echo $_SESSION['user_tokens'];?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -282,10 +279,10 @@ if (isset($_GET['logout'])) {
                     <thead class="font">
                     <tr>
                         <td>pRoduct id</td>
-                        <td>Image Title</td>
-                        <td>Image</td>
+                        <td>imAge title</td>
+                        <td>imAge</td>
                         <td>cRedits</td>
-                        <td>uploaded on</td>
+                        <td>uploAded on</td>
 
                     </tr>
                     </thead>
@@ -326,11 +323,11 @@ if (isset($_GET['logout'])) {
                 <table class="table table-bordered">
                     <thead class="font">
                         <tr>
-                            <td>Order id</td>
-                            <td>name</td>
-                            <td>user street</td>
-                            <td>user city</td>
-                            <td>user zip</td>
+                            <td>oRdeR id</td>
+                            <td>nAme</td>
+                            <td>useR stReet</td>
+                            <td>useR city</td>
+                            <td>useR zip</td>
                             <td>cRedits</td>
                             <td>oRdeR stAtus</td>
 

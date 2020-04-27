@@ -27,12 +27,12 @@ $result = mysqli_query($connect, "SELECT * FROM users");
         <table class="table table-bordered">
             <thead class="thead font">
                 <tr>
-                    <th scope="col">user id</th>
-                    <th scope="col">user nAme</th>
-                    <th scope="col">user email</th>
-                    <th scope="col">user tokens</th>
-                    <th scope="col">user Roles</th>
-                    <th scope="col">update</th>
+                    <th scope="col">useR id</th>
+                    <th scope="col">useR nAme</th>
+                    <th scope="col">useR emAil</th>
+                    <th scope="col">useR tokens</th>
+                    <th scope="col">useR Roles</th>
+                    <th scope="col">updAte</th>
 
                 </tr>
             </thead>
@@ -51,7 +51,7 @@ $result = mysqli_query($connect, "SELECT * FROM users");
                         <td><?php echo $row["user_email"]; ?></td>
                         <td><?php echo $row["user_tokens"]; ?></td>
                         <td><?php echo $row["user_roles"]; ?></td>
-                        <td><a href="adminUpdate.php?user_id=<?php echo $row["user_id"]; ?>" class="btn font">update</a></td>
+                        <td><a href="adminUpdate.php?user_id=<?php echo $row["user_id"]; ?>" class="btn font">updAte</a></td>
                     </tr>
                 <?php
                     $i++;

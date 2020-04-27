@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
             <h1><a href="index.php">n<i>&</i>n</a></h1>
 
             <div class="kredit">
-                <h1 class="h5 font">kReditov<?php echo $_SESSION['user_tokens']; ?></h1>
+                <h1 class="h5 font">youR cRedits:<?php echo $_SESSION['user_tokens']; ?></h1>
             </div>
         </div>
 
@@ -55,6 +55,7 @@ if (isset($_GET['logout'])) {
 
             <div class="container-fluid col-md-2 side">
                 <div class="row my-5">
+                    <!--
                     <div class="col-md-12">
                         <button class="btn my-3 font lupa" type="button" data-toggle="collapse" data-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">
                             <i class="fas fa-search"></i> Hladaj
@@ -63,15 +64,17 @@ if (isset($_GET['logout'])) {
                         <div class="collapse" id="multiCollapseExample5">
                             <input type="text" class="search" placeholder="Hladaj">
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <form action="#" method="post">
                     <!-- Cena -->
                     <div class="row mb-3">
                         <div class="col-md-12">
+                            <!--
                             <button class="btn font" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">
                                 <i class="fas fa-dollar-sign"></i> cena <i class="fas fa-chevron-down"></i>
                             </button>
+
 
                             <div class="collapse" id="multiCollapseExample4">
                                 <div class="card card-body">
@@ -80,7 +83,7 @@ if (isset($_GET['logout'])) {
                                         <p>Value: <span id="demo"></span> €</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
 
@@ -90,7 +93,7 @@ if (isset($_GET['logout'])) {
                         <div class="col-md-12">
 
                             <button class="btn mt-3 font" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">
-                                <i class="fas fa-signature"></i> Znacky <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-signature"></i> bRands <i class="fas fa-chevron-down"></i>
                             </button>
 
                             <div class="collapse" id="multiCollapseExample1">
@@ -134,7 +137,7 @@ if (isset($_GET['logout'])) {
                         <div class="col-md-12">
 
                             <button class="btn mt-3 font" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
-                                <i class="fas fa-ruler"></i> Velkosti <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-ruler"></i> size <i class="fas fa-chevron-down"></i>
                             </button>
 
                             <div class="collapse" id="multiCollapseExample2">
@@ -154,7 +157,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck5" name="size[]" value="S">
-                                                    <label class="custom-control-label" for="customCheck5">S</label>
+                                                    <label class="custom-control-label" for="customCheck5">s</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,7 +166,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck6" name="size[]" value="XXL">
-                                                    <label class="custom-control-label" for="customCheck6">XXL (Šimon)</label>
+                                                    <label class="custom-control-label" for="customCheck6">XXl (šimon)</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,7 +181,7 @@ if (isset($_GET['logout'])) {
                         <div class="col-md-12">
 
                             <button class="btn mt-3 font" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">
-                                <i class="fas fa-venus-mars"></i> poHlavie <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-venus-mars"></i> GendeR <i class="fas fa-chevron-down"></i>
                             </button>
 
                             <div class="collapse" id="multiCollapseExample3">
@@ -189,7 +192,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck7" name="sex[]" value="MUZ">
-                                                    <label class="custom-control-label" for="customCheck7">Muz</label>
+                                                    <label class="custom-control-label" for="customCheck7">Man</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -198,7 +201,7 @@ if (isset($_GET['logout'])) {
                                             <div class="col-md-12">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck8" name="sex[]" value="ZENA">
-                                                    <label class="custom-control-label" for="customCheck8">Zena</label>
+                                                    <label class="custom-control-label" for="customCheck8">Woman</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -211,7 +214,7 @@ if (isset($_GET['logout'])) {
                     <div class="row mt-3 font">
                         <div class="col-md-12">
                             <ul class="linky">
-                                <li><button type="submit" name="submit">filtruj</button></li>
+                                <li><button type="submit" name="submit">filteR</button></li>
 
                                 <li class="odhlasit">
                                     <a href="index.php?logout='1'" class="py-5 px-5"> loGout</a>
