@@ -107,21 +107,25 @@ if (isset($_GET['logout'])) {
         <i class="fas fa-times"></i>
 
         <form action="konto.php" method="post">
+            <?php
+            $result1 = mysqli_query($connect, "SELECT * FROM users WHERE  user_id='" . $_SESSION['user_id'] . "' ");
+            $row1 = mysqli_fetch_array($result1);
+            ?>
 
             <div class="form-group">
                 <label for="" class="font">username</label>
-                <input type="text" class="form-control" name="user_name" value="<?php echo $_SESSION['user_name'] ?>">
+                <input type="text" class="form-control" name="user_name" value="<?php echo $row1['user_name'] ?>">
             </div>
 
 
 
             <div class="form-group">
                 <label for="" class="font">eMAil</label>
-                <input type="text" class="form-control" name="user_email" value="<?php echo $_SESSION['user_email'] ?>">
+                <input type="text" class="form-control" name="user_email" value="<?php echo $row1['user_email'] ?>">
             </div>
             <div class="form-group">
                 <label for="" class="font">note</label>
-                <input type="textarea" class="form-control" name="user_desc" value="<?php echo $_SESSION['user_desc'] ?>" maxlength="300">
+                <input type="textarea" class="form-control" name="user_desc" value="<?php echo $row1['user_desc'] ?>" maxlength="300">
             </div>
 
 
@@ -147,7 +151,8 @@ if (isset($_GET['logout'])) {
 
 
     <div class="kredit">
-        <h1 class="h6 font">youR cRedits:<?php echo $_SESSION['user_tokens']; ?></h1>
+
+        <h1 class="h6 font">youR cRedits:<?php echo $row1['user_tokens']; ?></h1>
     </div>
 
 
@@ -210,14 +215,16 @@ if (isset($_GET['logout'])) {
                                     <h5 class="card-title font">note:</h5>
                                     <p class="card-text my-4" style="line-height: 220%">
                                         <?php
-                                            echo $_SESSION['user_desc'];
+                                        $results = mysqli_query($connect, "SELECT user_desc, created_at FROM users WHERE user_id='" . $_SESSION['user_id'] . "'");
+                                        $rows = mysqli_fetch_array($results);
+                                            echo $rows['user_desc'];
                                         ?>
                                     </p>
 
                                     <p class="card-text">
                                         <small class="text-muted">
                                             <?php
-                                                echo $_SESSION['created_at'];
+                                                echo $rows['created_at'];
                                             ?>
                                         </small>
                                     </p>
@@ -251,19 +258,19 @@ if (isset($_GET['logout'])) {
                                     <tr class="<?php if (isset($classname)) echo $classname; ?>">
                                         <?php $_SESSION['user_id'];?>
                                         <th scope="row">username</th>
-                                        <td><?php echo $row['user_name']; ?></td>
+                                        <td><?php echo $row1['user_name']; ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">user Role</th>
-                                        <td><?php echo $row['user_roles']; ?></td>
+                                        <td><?php echo $row1['user_roles']; ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">user email</th>
-                                        <td><?php echo $row['user_email']; ?></td>
+                                        <td><?php echo $row1['user_email']; ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">credits</th>
-                                        <td><?php echo $row['user_tokens'];?></td>
+                                        <td><?php echo $row1['user_tokens'];?></td>
                                     </tr>
                                     <?php
                                     $i++;

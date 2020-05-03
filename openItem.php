@@ -12,6 +12,8 @@ $msg = "";
 
 $result = mysqli_query($connect, "SELECT * FROM items WHERE product_id='" . $_GET['product_id'] . "'");
 $row = mysqli_fetch_array($result);
+$result1 = mysqli_query($connect, "SELECT * FROM users WHERE  user_id='" . $_SESSION['user_id'] . "' ");
+$row1 = mysqli_fetch_array($result1);
 if (isset($_POST['submit_order'])) {
 
     // dostaneme text
@@ -86,7 +88,7 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
     <h1><a href="index.php">n<i>&</i>n</a></h1>
 
     <div class="kredit">
-        <h1 class="h5">your credits:<?php echo $_SESSION['user_tokens']; ?></h1>
+        <h1 class="h5">your credits:<?php echo $row1['user_tokens']; ?></h1>
     </div>
 </div>
 

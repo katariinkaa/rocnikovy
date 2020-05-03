@@ -4,6 +4,8 @@ include_once 'server.php';
 error_reporting(E_ALL ^ E_NOTICE);
 error_reporting(E_ERROR | E_PARSE);
 $result = mysqli_query($connect, "SELECT * FROM items ");
+$result1 = mysqli_query($connect, "SELECT * FROM users WHERE  user_id='" . $_SESSION['user_id'] . "' ");
+$row1 = mysqli_fetch_array($result1);
 
 
 
@@ -45,7 +47,7 @@ if (isset($_GET['logout'])) {
             <h1><a href="index.php">n<i>&</i>n</a></h1>
 
             <div class="kredit">
-                <h1 class="h5 font">youR cRedits:<?php echo $_SESSION['user_tokens']; ?></h1>
+                <h1 class="h5 font">youR cRedits:<?php echo $row1['user_tokens']; ?></h1>
             </div>
         </div>
 
