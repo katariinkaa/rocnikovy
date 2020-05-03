@@ -80,7 +80,7 @@
                     <div class="black up"></div>
                     <div class="text font up">
                         <h1>clothes</h1>
-                        <a href='ponuka.php?category="oblecenie" ?>'>HeRe</a>
+                        <a href='ponukaClothes.php'>HeRe</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                     <div class="black right"></div>
                     <div class="text font right">
                         <h1>home</h1>
-                        <a href="#">HeRe</a>
+                        <a href="ponukaHome.php">HeRe</a>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     <div class="black left"></div>
                     <div class="text font left">
                         <h1>technology</h1>
-                        <a href="#">HeRe</a>
+                        <a href="ponukaTechnology.php">HeRe</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                     <div class="black down"></div>
                     <div class="text font down">
                         <h1>news</h1>
-                        <a href="#">HeRe</a>
+                        <a href="ponuka.php">HeRe</a>
                     </div>
                 </div>
             </div>

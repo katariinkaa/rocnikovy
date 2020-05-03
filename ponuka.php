@@ -1,8 +1,8 @@
 <?php
 include_once 'config.php';
 include_once 'server.php';
-error_reporting(E_ALL ^ E_NOTICE);
-error_reporting(E_ERROR | E_PARSE);
+//error_reporting(E_ALL ^ E_NOTICE);
+//error_reporting(E_ERROR | E_PARSE);
 $result = mysqli_query($connect, "SELECT * FROM items ");
 $result1 = mysqli_query($connect, "SELECT * FROM users WHERE  user_id='" . $_SESSION['user_id'] . "' ");
 $row1 = mysqli_fetch_array($result1);
@@ -266,6 +266,7 @@ if (isset($_GET['logout'])) {
                                 <?php
                                 //filtre pre ponuku
                                 if (!isset($_POST['submit'])) {
+
                                     $results = mysqli_query($connect, "SELECT * FROM items WHERE order_status=1");
                                 } else {
                                     $brand = array();
