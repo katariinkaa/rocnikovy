@@ -86,7 +86,7 @@ $result = mysqli_query($connect, "SELECT * FROM orders");
     <h1><a href="index.php">n<i>&</i>n</a></h1>
 
     <div class="kredit">
-        <h1 class="h5">kReditov - <?php echo $_SESSION['user_tokens']; ?></h1>
+        <h1 class="h5">your credits:<?php echo $_SESSION['user_tokens']; ?></h1>
     </div>
 </div>
 

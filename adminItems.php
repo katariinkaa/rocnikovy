@@ -1,6 +1,6 @@
 <?php
 include_once 'config.php';
-$result = mysqli_query($connect, "SELECT * FROM items ");
+$result = mysqli_query($connect, "SELECT * FROM items ORDER BY order_status DESC ");
 ?>
 <!DOCTYPE html>
 <html>

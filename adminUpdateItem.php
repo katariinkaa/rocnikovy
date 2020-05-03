@@ -5,7 +5,7 @@ if (count($_POST) > 0) {
 UPDATE items set product_id='" . $_POST['product_id'] . "', image_text='" . $_POST['image_text'] . "',
  image='" . $_POST['image'] . "', uploaded_on='" . $_POST['uploaded_on'] . "' ,brand='" . $_POST['brand'] . "'
  , user_id='" . $_POST['user_id'] . "', credits='" . $_POST['credits'] . "' , order_status='" . $_POST['order_status'] . "',
- category='" . $_POST['category'] . "', image_title='jj', size='uu', sex='zienka 'WHERE product_id='" . $_POST['product_id'] . "'");
+ category='" . $_POST['category'] . "' WHERE product_id='" . $_POST['product_id'] . "'");
     $message = "Record Modified Successfully";
     header("Location:adminItems.php");
 }

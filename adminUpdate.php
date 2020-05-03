@@ -1,7 +1,8 @@
 <?php
 include_once 'config.php';
 if (count($_POST) > 0) {
-    mysqli_query($connect, "UPDATE users set user_id='" . $_POST['user_id'] . "', user_name='" . $_POST['user_name'] . "', user_email='" . $_POST['user_email'] . "', user_tokens='" . $_POST['user_tokens'] . "' ,user_roles='" . $_POST['user_roles'] . "' WHERE user_id='" . $_POST['user_id'] . "'");
+    mysqli_query($connect, "UPDATE users set user_id='" . $_POST['user_id'] . "', user_name='" . $_POST['user_name'] . "', user_email='" . $_POST['user_email'] . "', user_tokens='" . $_POST['user_tokens'] . "' ,user_roles='" . $_POST['user_roles'] . "' 
+    WHERE user_id='" . $_POST['user_id'] . "'");
     $message = "Record Modified Successfully";
     header("Location:admin.php");
 }

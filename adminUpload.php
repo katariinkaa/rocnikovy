@@ -1,6 +1,7 @@
 <?php
 //db spojenie
 require 'config.php';
+session_start();
 
 //inicializácia správ na errory
 $msg = "";
@@ -29,15 +30,21 @@ if (isset($_POST['upload'])) {
 
     $sql = "INSERT INTO items (image, image_title, image_text, credits, brand, category, size, sex, user_id, order_status)
              VALUES ('$image', '$image_title', '$image_text', '$credits', '$selected_val_brand', '$selected_val_category', '$selected_val_size', '$selected_val_sex', '$user_id', '1')";
+
+    $result = mysqli_query($connect, "SELECT * FROM users WHERE user_id='" . $_POST['user_id'] . "'");
+    $row = mysqli_fetch_array($result);
+
     //query
     mysqli_query($connect, $sql);
-    $tokens = $_POST['credits']+$_SESSION['user_tokens'];
-    echo $tokens;
-    $sql1 = "UPDATE users SET user_tokens = '$tokens ' WHERE user_id = '$user_id' ";
+    $tokens = ($_POST['credits']+$row['user_tokens']);
+
+
+    $sql1 = "UPDATE users SET user_tokens = '$tokens' 
+    WHERE user_id = '".$_POST['user_id']."' ";
     mysqli_query($connect, $sql1);
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
-        header("Location:adminItems.php");
+
     } else {
         $msg = "Failed to upload image";
     }

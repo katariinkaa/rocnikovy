@@ -44,6 +44,9 @@ $result = mysqli_query($connect, "SELECT * FROM orders ");
             border-color: none !important;
         }
 
+        .a{
+            display: block !important;
+        }
         .b {
             display: none !important;
         }

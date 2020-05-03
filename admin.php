@@ -1,6 +1,6 @@
 <?php
 include_once 'config.php';
-$result = mysqli_query($connect, "SELECT * FROM users");
+$result = mysqli_query($connect, "SELECT * FROM users WHERE user_roles = 'user'");
 ?>
 <!DOCTYPE html>
 <html>
