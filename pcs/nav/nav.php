@@ -167,24 +167,24 @@
 
         <h2>Menu :</h2>
         <ul>
-            <li><a href="index.php">doMov</a></li>
-            <li><a href="ponuka.php">ponukA</a></li>
-            <li><a href="contact.php">contAct</a></li>
+            <li><a href="index.php">home</a></li>
+            <li><a href="konto.php">profile</a></li>
+            <li><a href="ponuka.php">offer</a></li>
             <li><a href="register.php">ReGisteR</a></li>
         </ul>
 
-        <h2>ponuKA :</h2>
+        <h2>offer :</h2>
         <ul>
-            <li><a href="#">doMAcnost</a></li>
-            <li><a href="#">elektRo</a></li>
-            <li><a href="#">noVinKy</a></li>
-            <li class="otvor"><a href="#">oblecenie</a>
+            <li><a href="#">home</a></li>
+            <li><a href="#">technology</a></li>
+            <li><a href="#">news</a></li>
+            <li class="otvor"><a href="#">clothes</a>
 
-                <ul class="roll">
-                    <li>MiKiny</li>
-                    <li>topAnKy</li>
-                    <li>noHAVice</li>
-                </ul>
+              <!--  <ul class="roll">
+                    <li>sweatshirts</li>
+                    <li>shoes</li>
+                    <li>trousers</li>
+                </ul>-->
 
             </li>
         </ul>
