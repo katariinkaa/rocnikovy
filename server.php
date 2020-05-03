@@ -22,7 +22,8 @@ $db = mysqli_connect('localhost', 'root', '', 'nekupujnove.sk');
 
 // Registration code 
 if (isset($_POST['reg_user'])) {
-
+	error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(E_ERROR | E_PARSE);
 	// Receiving the values entered and storing 
 	// in the variables 
 	// Data sanitization is done to prevent 
@@ -31,9 +32,7 @@ if (isset($_POST['reg_user'])) {
 	$email = mysqli_real_escape_string($db, $_POST['user_email']);
 	$userid = mysqli_real_escape_string($db, $_POST['user_id']);
 	$roles = mysqli_real_escape_string($db, $_POST['user_roles']);
-	$userdesc = mysqli_real_escape_string($db, $_POST['user_desc']);
-	$createdat=mysqli_real_escape_string($db, $_POST['created_at']);
-	$tokens = mysqli_real_escape_string($db, $_POST['user_tokens']);
+
 	$password_1 = mysqli_real_escape_string($db, $_POST['user_pass_1']);
 	$password_2 = mysqli_real_escape_string($db, $_POST['user_pass_2']);
 

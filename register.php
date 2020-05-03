@@ -1,5 +1,7 @@
 <?php include('server.php') ;
-error_reporting(E_ALL ^ E_NOTICE);?>
+error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ERROR | E_PARSE);
+?>
 <!DOCTYPE html>
 <html lang="en">
 

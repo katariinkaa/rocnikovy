@@ -50,6 +50,27 @@ $result = mysqli_query($connect, "SELECT * FROM orders ");
         .b {
             display: none !important;
         }
+        td a{
+            color: black;
+
+        }
+        td a:hover{
+            color: #ffcc00;
+        }
+        td{
+            text-align: center;
+            font-size: 80%;
+        }
+        .lfont{
+
+            text-align: left;
+        }
+        .sfont{
+            width: 5%;
+        }
+        th{
+            line-height: 100%;
+        }
     </style>
 </head>
 
@@ -82,11 +103,11 @@ $result = mysqli_query($connect, "SELECT * FROM orders ");
                         $classname = "odd";
                 ?>
                     <tr class="<?php if (isset($classname)) echo $classname; ?>">
-                        <td> <a href="adminOrders.php?order_id=<?php echo $row["order_id"]; ?>"><?php echo $row["order_id"]; ?></a></td>
-                        <td><?php echo $row["product_id"]; ?></td>
-                        <td><?php echo $row["user_id"]; ?></td>
-                        <td><?php echo $row["name"]; ?></td>
-                        <td><?php echo $row["user_street"]; ?></td>
+                        <td class="sfont"> <a href="adminOrders.php?order_id=<?php echo $row["order_id"]; ?>"><?php echo $row["order_id"]; ?></a></td>
+                        <td class="sfont"><?php echo $row["product_id"]; ?></td>
+                        <td class="sfont"><?php echo $row["user_id"]; ?></td>
+                        <td class="lfont"><?php echo $row["name"]; ?></td>
+                        <td class="lfont"><?php echo $row["user_street"]; ?></td>
                         <td><?php echo $row["user_city"]; ?></td>
                         <td><?php echo $row["user_zip"]; ?></td>
                         <td><?php echo $row["phone_number"]; ?></td>

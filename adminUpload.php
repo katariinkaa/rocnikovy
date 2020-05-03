@@ -22,7 +22,7 @@ if (isset($_POST['upload'])) {
 
     // ukladanie do adresara images
     $target = "images/" . basename($image);
-
+//ukladanie vybranej value
     $selected_val_size = $_POST['size'];
     $selected_val_sex = $_POST['sex'];
     $selected_val_brand = $_POST['brand'];
@@ -38,12 +38,13 @@ if (isset($_POST['upload'])) {
     mysqli_query($connect, $sql);
     $tokens = ($_POST['credits']+$row['user_tokens']);
 
-
+//zmena kreditov pouzivatela
     $sql1 = "UPDATE users SET user_tokens = '$tokens' 
     WHERE user_id = '".$_POST['user_id']."' ";
     mysqli_query($connect, $sql1);
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
+        header("Location:adminItems.php");
 
     } else {
         $msg = "Failed to upload image";
