@@ -202,6 +202,7 @@ $result = mysqli_query($connect, "SELECT * FROM items");
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="Xl">XL</option>
+                    <option value="---">---</option>
 
                 </select>
             </div>
